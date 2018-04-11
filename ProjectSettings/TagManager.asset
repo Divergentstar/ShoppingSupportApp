@@ -3,7 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - fiveEuro
+  - twoEuro
+  - oneEuro
+  - panel2
+  - twoCent
+  - oneCent
+  - fiveCent
+  - tenCent
+  - tenEuro
+  - twentyCent
+  - twentyEuro
+  - fiftyCent
+  - fiftyEuro
+  - 100Euro
+  - 200Euro
+  - wallet
+  - manager
+  - inputField
+  - walletMoneyArea
+  - moneyCombArea
+  - changeArea
+  - bag
+  - ShopListItem
   layers:
   - Default
   - TransparentFX
