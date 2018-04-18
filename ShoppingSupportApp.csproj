@@ -251,6 +251,8 @@
     <Compile Include="Assets\Scripts\Data\ShopData.cs" />
     <Compile Include="Assets\Scripts\Data\ShopNetworkData.cs" />
     <Compile Include="Assets\Scripts\Models\ShopListItem.cs" />
+    <Compile Include="Assets\Scripts\Models\ShopsList.cs" />
+    <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Boomlagoon\JSON\Readme.txt" />

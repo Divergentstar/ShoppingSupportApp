@@ -121,7 +121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1832241133457170
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  market: {fileID: 0}
+  shops: {fileID: 0}
+  categories: {fileID: 0}
+  items: {fileID: 0}
   cashbox: {fileID: 1493719252415986}
 --- !u!114 &114447861414604386
 MonoBehaviour:
@@ -523,7 +525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
-  market: {fileID: 0}
+  shops: {fileID: 0}
+  categories: {fileID: 0}
+  items: {fileID: 0}
   cashbox: {fileID: 1493719252415986}
 --- !u!114 &114590932600039646
 MonoBehaviour:

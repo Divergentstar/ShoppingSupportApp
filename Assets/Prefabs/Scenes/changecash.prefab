@@ -371,7 +371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1552902084720682, guid: aa12b32812abb984fa19b778b45623db, type: 2}
-  market: {fileID: 1000934480691522, guid: 44122c5619945274fbb8d33d85a0171e, type: 2}
+  shops: {fileID: 0}
+  categories: {fileID: 0}
+  items: {fileID: 0}
   cashbox: {fileID: 1493719252415986, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
 --- !u!114 &114452992328013224
 MonoBehaviour:
@@ -531,7 +533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1552902084720682, guid: aa12b32812abb984fa19b778b45623db, type: 2}
-  market: {fileID: 1000934480691522, guid: 44122c5619945274fbb8d33d85a0171e, type: 2}
+  shops: {fileID: 0}
+  categories: {fileID: 0}
+  items: {fileID: 0}
   cashbox: {fileID: 1815583253733812, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
 --- !u!114 &114797369931870902
 MonoBehaviour:

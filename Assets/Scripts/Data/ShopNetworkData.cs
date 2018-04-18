@@ -9,6 +9,8 @@ namespace Assets.Scripts.Data
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ImageData image { get; set; }
+        public ImageData Image { get; set; }
+
+        public ShopNetworkData(){}
     }
 }

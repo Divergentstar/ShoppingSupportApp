@@ -10,8 +10,7 @@ namespace Assets.Scripts.Data
         public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public ShopNetworkData shopNetwork { get; set; }
-        public ImageData image { get; set; }
+        public ShopNetworkData ShopNetwork { get; set; }
 
         public ShopData(){}
     }

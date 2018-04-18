@@ -758,7 +758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1178902009023116}
-  market: {fileID: 0}
+  shops: {fileID: 0}
+  categories: {fileID: 0}
+  items: {fileID: 0}
   cashbox: {fileID: 0}
 --- !u!114 &114506930069857492
 MonoBehaviour:

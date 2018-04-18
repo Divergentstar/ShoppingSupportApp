@@ -5,7 +5,9 @@ using UnityEngine;
 public class MovingController : MonoBehaviour {
 
 	public GameObject main;
-	public GameObject market;
+	public GameObject shops;
+    public GameObject categories;
+    public GameObject items;
 	public GameObject cashbox;
 	private GameObject changeAr;
 	private GameObject link;
@@ -15,38 +17,61 @@ public class MovingController : MonoBehaviour {
     void Start()
     {
         main.gameObject.SetActive(true);
-        market.gameObject.SetActive(false);
+        shops.gameObject.SetActive(false);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(false);
+        cashbox.gameObject.SetActive(false);
+    }
+
+    public void GetShops()
+    {
+        main.gameObject.SetActive(false);
+        shops.gameObject.SetActive(true);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(false);
         cashbox.gameObject.SetActive(false);
     }
 
     // Нажали на иконку магазина, переход в магазин
     public void GetMarket ()
 	{
-		main.gameObject.SetActive (false);
-		market.gameObject.SetActive (true);
-	}
+        main.gameObject.SetActive(false);
+        shops.gameObject.SetActive(false);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(true);
+        cashbox.gameObject.SetActive(false);
+    }
 
 	// Переход к кассе
 	public void GetCashbox() 
 	{
-		market.gameObject.SetActive (false);
-		cashbox.gameObject.SetActive (true);
+        main.gameObject.SetActive(false);
+        shops.gameObject.SetActive(false);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(false);
+        cashbox.gameObject.SetActive (true);
 		_cashbox = GameObject.Find ("paymentcash");
 	}
 
 	// Переход обратно на главный эеран из магазина
 	public void BackToMain () 
 	{
-		market.gameObject.SetActive (false);
-		main.gameObject.SetActive (true);
-	}
+        main.gameObject.SetActive(true);
+        shops.gameObject.SetActive(false);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(false);
+        cashbox.gameObject.SetActive(false);
+    }
 
 	// Переход в магазин из кассы
 	public void BackToMarket() 
 	{
-		cashbox.gameObject.SetActive (false);
-		market.gameObject.SetActive(true);
-	}
+        main.gameObject.SetActive(false);
+        shops.gameObject.SetActive(false);
+        //categories.gameObject.SetActive(false);
+        //items.gameObject.SetActive(true);
+        cashbox.gameObject.SetActive(false);
+    }
 
 	// Переход к сдаче
 	public void GetChange() 
