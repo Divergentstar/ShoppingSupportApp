@@ -20,7 +20,7 @@ public class ShopsList : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        GetShops();
 	}
 
     //Invoke this function where to want to make request.
@@ -38,6 +38,7 @@ public class ShopsList : MonoBehaviour {
 
         if (www.error == null)
         {
+            Debug.Log(www.text);
             jsonData = www.text;
             //Data is in json format, we need to parse the Json.
             JSONArray jsonArrayShops = JSONArray.Parse(jsonData);
