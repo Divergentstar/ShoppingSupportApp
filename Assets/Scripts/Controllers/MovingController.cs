@@ -27,7 +27,7 @@ public class MovingController : MonoBehaviour {
     public void GetShops()
     {
         main.gameObject.SetActive(false);
-        shops.gameObject.SetActive(true);
+        //shops.gameObject.SetActive(true);
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = true;
