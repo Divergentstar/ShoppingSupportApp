@@ -13,6 +13,7 @@ public class MovingController : MonoBehaviour {
 	private GameObject link;
 	private GameObject _cashbox;
     private GameObject _shops;
+    private GameObject _categories;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,9 @@ public class MovingController : MonoBehaviour {
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = false;
+        _categories = GameObject.Find("categories");
+        _categories = categories;
+        _categories.GetComponent<Canvas>().enabled = false;
     }
 
     public void GetShops()
@@ -31,6 +35,19 @@ public class MovingController : MonoBehaviour {
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void GetCategories()
+    {
+        main.gameObject.SetActive(false);
+        //shops.gameObject.SetActive(false);
+        _shops = GameObject.Find("shops");
+        _shops = shops;
+        _shops.GetComponent<Canvas>().enabled = false;
+        //categories.gameObject.SetActive(true);
+        _categories = GameObject.Find("categories");
+        _categories = categories;
+        _categories.GetComponent<Canvas>().enabled = true;
     }
 
     // Нажали на иконку магазина, переход в магазин

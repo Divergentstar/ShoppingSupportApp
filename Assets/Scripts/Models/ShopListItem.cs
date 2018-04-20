@@ -1,10 +1,6 @@
 ﻿using Assets.Scripts.Data;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Boomlagoon.JSON;
 
 public class ShopListItem : MonoBehaviour {
 
