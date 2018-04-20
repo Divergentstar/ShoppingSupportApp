@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using Boomlagoon.JSON;
 
-public class CategoriesList : MonoBehaviour {
+public class MainCategoriesList : MonoBehaviour {
 
     public Transform contentPanel;
     public SimpleObjectPool categoryObjectPool;
@@ -17,18 +17,18 @@ public class CategoriesList : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        GetMainCategories();
 	}
 
     //Invoke this function where to want to make request.
-    void GetCategories()
+    void GetMainCategories()
     {
         //sending the request to url
         www = new WWW(databaseUrl);
-        StartCoroutine(GetDataCategories(www));
+        StartCoroutine(GetDataMainCategories(www));
     }
 
-    IEnumerator GetDataCategories(WWW www)
+    IEnumerator GetDataMainCategories(WWW www)
     {
         //Wait for request to complete
         yield return www;
@@ -36,6 +36,8 @@ public class CategoriesList : MonoBehaviour {
         if (www.error == null)
         {
             jsonData = www.text;
+            Debug.Log(jsonData);
+
             //Data is in json format, we need to parse the Json.
             JSONArray jsonArrayCategories = JSONArray.Parse(jsonData);
 
@@ -70,16 +72,21 @@ public class CategoriesList : MonoBehaviour {
 
                     //foundImage.Image = spriteColruyt;
 
-                    //now we can get the values from json of any attribute.
-                    foundCategory.Id = Convert.ToInt32(jsonObjectCategory["id"].Number);
-                    foundCategory.Name = jsonObjectCategory["name"].Str;
-                    foundCategory.Image = foundImage;
+                    int mainCategory = Convert.ToInt32(jsonObjectCategory["parent_id"].Number);
 
-                    GameObject newCategoryListItem = categoryObjectPool.GetObject();
-                    newCategoryListItem.transform.SetParent(contentPanel);
+                    if (mainCategory == 0)
+                    {
+                        //now we can get the values from json of any attribute.
+                        foundCategory.Id = Convert.ToInt32(jsonObjectCategory["id"].Number);
+                        foundCategory.Name = jsonObjectCategory["name"].Str;
+                        foundCategory.Image = foundImage;
 
-                    CategoryListItem categoryListItem = newCategoryListItem.GetComponent<CategoryListItem>();
-                    categoryListItem.ShowCategoryInfo(foundCategory);
+                        GameObject newCategoryListItem = categoryObjectPool.GetObject();
+                        newCategoryListItem.transform.SetParent(contentPanel);
+
+                        MainCategoryListItem categoryListItem = newCategoryListItem.GetComponent<MainCategoryListItem>();
+                        categoryListItem.ShowCategoryInfo(foundCategory);
+                    }
                 }
             }
         }

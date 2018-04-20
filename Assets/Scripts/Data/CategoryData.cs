@@ -10,7 +10,7 @@ namespace Assets.Scripts.Data
         public int Id { get; set; }
         public string Name { get; set; }
         public ImageData Image { get; set; }
-        public CategoryData mainCategory { get; set; }
+        public CategoryData MainCategory { get; set; }
 
         public CategoryData(){}
     }

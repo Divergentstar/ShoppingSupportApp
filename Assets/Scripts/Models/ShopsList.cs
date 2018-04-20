@@ -38,6 +38,8 @@ public class ShopsList : MonoBehaviour {
         if (www.error == null)
         {
             jsonData = www.text;
+            Debug.Log(jsonData);
+
             //Data is in json format, we need to parse the Json.
             JSONArray jsonArrayShops = JSONArray.Parse(jsonData);
 
@@ -98,6 +100,8 @@ public class ShopsList : MonoBehaviour {
         if (www.error == null)
         {
             jsonData = www.text;
+            Debug.Log(jsonData);
+
             //Data is in json format, we need to parse the Json.
             JSONObject jsonObjectShopNetwork = JSONObject.Parse(jsonData);
             JSONObject jsonObjectShop = JSONObject.Parse(jsonDataObjects[index]);

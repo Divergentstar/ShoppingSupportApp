@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CategoryListItem : MonoBehaviour {
+public class MainCategoryListItem : MonoBehaviour {
 
     public Text nameCategory;
     public Image iconImage;
