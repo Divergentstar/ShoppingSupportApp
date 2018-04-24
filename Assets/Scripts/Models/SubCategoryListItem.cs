@@ -2,15 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainCategoryListItem : MonoBehaviour {
-
+public class SubCategoryListItem : MonoBehaviour
+{
     public Text nameCategory;
     public Image iconImage;
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+
+    }
 
     public void ShowCategoryInfo(CategoryData category)
     {

@@ -72,9 +72,7 @@ public class MainCategoriesList : MonoBehaviour {
 
                     //foundImage.Image = spriteColruyt;
 
-                    int mainCategory = Convert.ToInt32(jsonObjectCategory["parent_id"].Number);
-
-                    if (mainCategory == 0)
+                    if (Convert.ToInt32(jsonObjectCategory["parent_id"].Number) == 0)
                     {
                         //now we can get the values from json of any attribute.
                         foundCategory.Id = Convert.ToInt32(jsonObjectCategory["id"].Number);

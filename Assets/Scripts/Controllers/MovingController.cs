@@ -7,19 +7,25 @@ using Boomlagoon.JSON;
 
 public class MovingController : MonoBehaviour
 {
-
-    public int shopId = 1;
     public GameObject main;
     public GameObject shops;
-    public GameObject categories;
+    public GameObject mainCategories;
+    public GameObject subCategories;
+    public GameObject items;
     public GameObject market;
     public GameObject cashbox;
     public Text nameShop;
+    public Text nameCategory;
+    private int shopId = 1;
+    private int categoryId = 3;
+    private int amountSubcategories = 0;
     private GameObject changeAr;
     private GameObject link;
     private GameObject _cashbox;
     private GameObject _shops;
-    private GameObject _categories;
+    private GameObject _mainCategories;
+    private GameObject _subCategories;
+    private GameObject _items;
     private WWW www;
     private string databaseUrl = "";
     private string jsonData = "";
@@ -36,9 +42,25 @@ public class MovingController : MonoBehaviour
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = false;
-        _categories = GameObject.Find("categories");
-        _categories = categories;
-        _categories.GetComponent<Canvas>().enabled = false;
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = false;
+        _subCategories = GameObject.Find("subCategories");
+        _subCategories = subCategories;
+        _subCategories.GetComponent<Canvas>().enabled = false;
+        _items = GameObject.Find("items");
+        _items = items;
+        _items.GetComponent<Canvas>().enabled = false;
+    }
+
+    public int GetShopId()
+    {
+        return shopId;
+    }
+
+    public int GetCategoryId()
+    {
+        return categoryId;
     }
 
     public void GetShops()
@@ -49,17 +71,55 @@ public class MovingController : MonoBehaviour
         _shops.GetComponent<Canvas>().enabled = true;
     }
 
-    public void GetCategories()
+    public void GetMainCategories()
     {
         GetShop();
         Debug.Log(shopId);
-        main.gameObject.SetActive(false);
+
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = false;
-        _categories = GameObject.Find("categories");
-        _categories = categories;
-        _categories.GetComponent<Canvas>().enabled = true;
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void GetSubcategoriesOrItems()
+    {
+        GetCategory();
+        Debug.Log(categoryId);
+        CountSubcategories();
+        Debug.Log(amountSubcategories);
+
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = false;
+
+        if (amountSubcategories > 0)
+        {
+            GetSubcategories();
+        }
+        else
+        {
+            GetItems();
+        }
+    }
+
+    public void GetSubcategories()
+    {
+         _subCategories = GameObject.Find("subCategories");
+         _subCategories = subCategories;
+         _subCategories.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void GetItems()
+    {
+        _subCategories = GameObject.Find("subCategories");
+        _subCategories = subCategories;
+        _subCategories.GetComponent<Canvas>().enabled = false;
+        _items = GameObject.Find("items");
+        _items = items;
+        _items.GetComponent<Canvas>().enabled = true;
     }
 
     // Нажали на иконку магазина, переход в магазин
@@ -91,12 +151,25 @@ public class MovingController : MonoBehaviour
 
     public void BackToShops()
     {
-        _categories = GameObject.Find("categories");
-        _categories = categories;
-        _categories.GetComponent<Canvas>().enabled = false;
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = false;
         _shops = GameObject.Find("shops");
         _shops = shops;
         _shops.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void BackToMainCategories()
+    {
+        _subCategories = GameObject.Find("subCategories");
+        _subCategories = subCategories;
+        _subCategories.GetComponent<Canvas>().enabled = false;
+        _items = GameObject.Find("items");
+        _items = items;
+        _items.GetComponent<Canvas>().enabled = false;
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = true;
     }
 
     // Переход в магазин из кассы
@@ -208,6 +281,133 @@ public class MovingController : MonoBehaviour
                     if (jsonObjectShop["description"].Str == nameShop.text)
                     {
                         shopId = Convert.ToInt32(jsonObjectShop["id"].Number);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.Log(www.error);
+        }
+    }
+
+    //Invoke this function where to want to make request.
+    void GetCategory()
+    {
+        databaseUrl = "http://gmanager.herokuapp.com/api/category/list/";
+        //sending the request to url
+        www = new WWW(databaseUrl);
+        StartCoroutine(GetDataCategories(www));
+    }
+
+    IEnumerator GetDataCategories(WWW www)
+    {
+        //Wait for request to complete
+        yield return www;
+
+        if (www.error == null)
+        {
+            jsonData = www.text;
+            Debug.Log(jsonData);
+
+            //Data is in json format, we need to parse the Json.
+            JSONArray jsonArrayCategories = JSONArray.Parse(jsonData);
+
+            //parse text to array of strings
+            jsonData = jsonData.Replace("[", "");
+            jsonData = jsonData.Replace("]", "");
+            jsonDataObjects = jsonData.Split('}');
+
+            for (int i = 0; i < jsonDataObjects.Length; i++)
+            {
+                jsonDataObjects[i] = jsonDataObjects[i] + "}";
+
+                if (i > 0)
+                {
+                    jsonDataObjects[i] = jsonDataObjects[i].Substring(1);
+                }
+            }
+
+            if (jsonArrayCategories == null)
+            {
+                Debug.Log("No data converted");
+            }
+            else
+            {
+                for (int i = 0; i < jsonArrayCategories.Length; i++)
+                {
+                    foundCategory = new CategoryData();
+
+                    //Data is in json format, we need to parse the Json.
+                    JSONObject jsonObjectCategory = JSONObject.Parse(jsonDataObjects[i]);
+
+                    if (jsonObjectCategory["name"].Str == nameCategory.text)
+                    {
+                        categoryId = Convert.ToInt32(jsonObjectCategory["id"].Number);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.Log(www.error);
+        }
+    }
+
+    //Invoke this function where to want to make request.
+    void CountSubcategories()
+    {
+        amountSubcategories = 0;
+        databaseUrl = "http://gmanager.herokuapp.com/api/category/list/";
+        //sending the request to url
+        www = new WWW(databaseUrl);
+        StartCoroutine(GetDataSubcategories(www));
+    }
+
+    IEnumerator GetDataSubcategories(WWW www)
+    {
+        //Wait for request to complete
+        yield return www;
+
+        if (www.error == null)
+        {
+            jsonData = www.text;
+            Debug.Log(jsonData);
+
+            //Data is in json format, we need to parse the Json.
+            JSONArray jsonArrayCategories = JSONArray.Parse(jsonData);
+
+            //parse text to array of strings
+            jsonData = jsonData.Replace("[", "");
+            jsonData = jsonData.Replace("]", "");
+            jsonDataObjects = jsonData.Split('}');
+
+            for (int i = 0; i < jsonDataObjects.Length; i++)
+            {
+                jsonDataObjects[i] = jsonDataObjects[i] + "}";
+
+                if (i > 0)
+                {
+                    jsonDataObjects[i] = jsonDataObjects[i].Substring(1);
+                }
+            }
+
+            if (jsonArrayCategories == null)
+            {
+                Debug.Log("No data converted");
+            }
+            else
+            {
+                for (int i = 0; i < jsonArrayCategories.Length; i++)
+                {
+                    foundCategory = new CategoryData();
+
+                    //Data is in json format, we need to parse the Json.
+                    JSONObject jsonObjectCategory = JSONObject.Parse(jsonDataObjects[i]);
+
+                    if (Convert.ToInt32(jsonObjectCategory["parent_id"].Number) == categoryId)
+                    {
+                        amountSubcategories++;
                     }
                 }
             }

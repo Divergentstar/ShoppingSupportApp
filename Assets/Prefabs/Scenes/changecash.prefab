@@ -372,9 +372,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1552902084720682, guid: aa12b32812abb984fa19b778b45623db, type: 2}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 0}
   cashbox: {fileID: 1493719252415986, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114452992328013224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,9 +538,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1552902084720682, guid: aa12b32812abb984fa19b778b45623db, type: 2}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 0}
   cashbox: {fileID: 1815583253733812, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114797369931870902
 MonoBehaviour:
   m_ObjectHideFlags: 1

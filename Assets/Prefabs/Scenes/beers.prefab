@@ -1008,9 +1008,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 1000934480691522}
   cashbox: {fileID: 0}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114319181759142326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1225,9 +1229,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 1000934480691522}
   cashbox: {fileID: 0}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114420028720474226
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -612,9 +612,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1178902009023116}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 0}
   cashbox: {fileID: 0}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114354093705479118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -776,9 +780,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1178902009023116}
   shops: {fileID: 0}
-  categories: {fileID: 0}
+  mainCategories: {fileID: 0}
+  subCategories: {fileID: 0}
+  items: {fileID: 0}
   market: {fileID: 0}
   cashbox: {fileID: 0}
+  nameShop: {fileID: 0}
+  nameCategory: {fileID: 0}
 --- !u!114 &114506930069857492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1627,7 +1635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.148}
   m_AnchorMin: {x: 0, y: 0.8043102}
   m_AnchorMax: {x: 0.33800003, y: 0.92257756}
-  m_AnchoredPosition: {x: -0.5988388, y: 0.017150879}
+  m_AnchoredPosition: {x: -0.59884644, y: 0.017150879}
   m_SizeDelta: {x: -2.0069, y: 2.0517}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!224 &224626192629667320
@@ -1753,6 +1761,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.9096899}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48.800003, y: -1.3999939}
+  m_AnchoredPosition: {x: -48.800003, y: -1.4000244}
   m_SizeDelta: {x: 90, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
