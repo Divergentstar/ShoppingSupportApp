@@ -16,6 +16,6 @@ public class SubCategoryListItem : MonoBehaviour
     public void ShowCategoryInfo(CategoryData category)
     {
         nameCategory.text = category.Name;
-        //iconImage.sprite = category.Image.Image;
+        iconImage.sprite = category.Image.Image;
     }
 }

@@ -6,6 +6,24 @@ using Boomlagoon.JSON;
 
 public class MainCategoriesList : MonoBehaviour {
 
+    public Sprite spritegroentenfruit;
+    public Sprite spritesoep;
+    public Sprite spriteparfum;
+    public Sprite spritechips;
+    public Sprite spriteonderhoud;
+    public Sprite spritebeenhouwer;
+    public Sprite spritediepvries;
+    public Sprite spritehuisdieren;
+    public Sprite spritezuivel;
+    public Sprite spritedranken;
+    public Sprite spritenietvoeding;
+    public Sprite spritevis;
+    public Sprite spritewijn;
+    public Sprite spritesnoep;
+    public Sprite spriteontbijt;
+    public Sprite spritebaby;
+    public Sprite spritekruiden;
+    public Sprite spritestandard;
     public Transform contentPanel;
     public SimpleObjectPool categoryObjectPool;
     private WWW www;
@@ -70,7 +88,63 @@ public class MainCategoriesList : MonoBehaviour {
                     //Data is in json format, we need to parse the Json.
                     JSONObject jsonObjectCategory = JSONObject.Parse(jsonDataObjects[i]);
 
-                    //foundImage.Image = spriteColruyt;
+                    switch(jsonObjectCategory["name"].Str)
+                    {
+                        case "Groenten en fruit":
+                            foundImage.Image = spritegroentenfruit;
+                            break;
+                        case "Conserven en Soepen":
+                            foundImage.Image = spritesoep;
+                            break;
+                        case "Lichaamsverzorging / Parfumerie":
+                            foundImage.Image = spriteparfum;
+                            break;
+                        case "Chips/Borrelhapjes":
+                            foundImage.Image = spritechips;
+                            break;
+                        case "Onderhoud / Huishouden":
+                            foundImage.Image = spriteonderhoud;
+                            break;
+                        case "Colruyt-beenhouwerij":
+                            foundImage.Image = spritebeenhouwer;
+                            break;
+                        case "Diepvries":
+                            foundImage.Image = spritediepvries;
+                            break;
+                        case "Huisdieren":
+                            foundImage.Image = spritehuisdieren;
+                            break;
+                        case "Zuivel":
+                            foundImage.Image = spritezuivel;
+                            break;
+                        case "Dranken":
+                            foundImage.Image = spritedranken;
+                            break;
+                        case "Niet-voeding":
+                            foundImage.Image = spritenietvoeding;
+                            break;
+                        case "Bereidingen / Charcuterie / Vis / Veggie":
+                            foundImage.Image = spritevis;
+                            break;
+                        case "Wijn & Bubbels":
+                            foundImage.Image = spritewijn;
+                            break;
+                        case "Koekjes / Chocolade / Snoep":
+                            foundImage.Image = spritesnoep;
+                            break;
+                        case "Brood / Ontbijt":
+                            foundImage.Image = spriteontbijt;
+                            break;
+                        case "Baby":
+                            foundImage.Image = spritebaby;
+                            break;
+                        case "Kruidenierswaren / Droge voeding":
+                            foundImage.Image = spritekruiden;
+                            break;
+                        default:
+                            foundImage.Image = spritestandard;
+                            break;
+                    }
 
                     if (Convert.ToInt32(jsonObjectCategory["parent_id"].Number) == 0)
                     {

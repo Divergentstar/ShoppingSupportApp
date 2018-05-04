@@ -4,7 +4,8 @@ using System.Collections;
 using UnityEngine;
 using Boomlagoon.JSON;
 
-public class ItemsList : MonoBehaviour {
+public class ItemsList : MonoBehaviour
+{
 
     public Transform contentPanel;
     public SimpleObjectPool itemObjectPool;
@@ -15,6 +16,7 @@ public class ItemsList : MonoBehaviour {
     private int categoryId = 6;
     private int shopId = 1;
     private int itemId = 46;
+    private int imageId = 1;
     private ItemInShopData foundItemInShop;
     private ShopData foundShop;
     private ItemData foundItem;
@@ -32,14 +34,14 @@ public class ItemsList : MonoBehaviour {
     void GetCategoryId()
     {
         MovingController movingController = GetComponent<MovingController>();
-        categoryId = movingController.GetCategoryId();
+        //categoryId = movingController.GetCategoryId();
         GetCategory();
     }
 
     void GetShopId()
     {
         MovingController movingController = GetComponent<MovingController>();
-        shopId = movingController.GetShopId();
+        //shopId = movingController.GetShopId();
         GetShop();
     }
 
@@ -122,6 +124,7 @@ public class ItemsList : MonoBehaviour {
         if (www.error == null)
         {
             jsonData = www.text;
+            string jsonDataItem = jsonData;
             Debug.Log(jsonData);
 
             //Data is in json format, we need to parse the Json.
@@ -139,28 +142,62 @@ public class ItemsList : MonoBehaviour {
                 //Data is in json format, we need to parse the Json.
                 JSONObject jsonObjectItemInShop = JSONObject.Parse(jsonDataObjects[index]);
 
-                //foundImage.Image = spriteColruyt;
-
                 if (Convert.ToInt32(jsonObjectItem["category_id"].Number) == categoryId)
                 {
-                    //now we can get the values from json of any attribute.
-                    foundItem.Id = Convert.ToInt32(jsonObjectItem["id"].Number);
-                    foundItem.Name = jsonObjectItem["name"].Str;
-                    foundItem.Image = foundImage;
-                    foundItem.Category = foundCategory;
-
-                    foundItemInShop.Id = Convert.ToInt32(jsonObjectItemInShop["id"].Number);
-                    foundItemInShop.Item = foundItem;
-                    foundItemInShop.Shop = foundShop;
-                    foundItemInShop.Price = jsonObjectItemInShop["price"].Number;
-
-                    GameObject newItemListItem = itemObjectPool.GetObject();
-                    newItemListItem.transform.SetParent(contentPanel);
-
-                    ItemListItem itemListItem = newItemListItem.GetComponent<ItemListItem>();
-                    itemListItem.ShowItemInfo(foundItemInShop);
-                }               
+                    imageId = Convert.ToInt32(jsonObjectItem["image"].Number);
+                    GetImage(index, jsonDataItem);
+                }
             }
+        }
+        else
+        {
+            Debug.Log(www.error);
+        }
+    }
+
+    void GetImage(int index, string jsonDataItem)
+    {
+        databaseUrl = "http://gmanager.herokuapp.com/api/image/get/" + imageId;
+
+        //sending the request to url
+        www = new WWW(databaseUrl);
+        StartCoroutine(GetDataImage(www, index, jsonDataItem));
+    }
+
+    IEnumerator GetDataImage(WWW www, int index, string jsonDataItem)
+    {
+        //Wait for request to complete
+        yield return www;
+
+        if (www.error == null)
+        {
+            jsonData = www.text;
+            Debug.Log(jsonData);
+
+            //Data is in json format, we need to parse the Json.
+            JSONObject jsonObjectItem = JSONObject.Parse(jsonDataItem);
+            JSONObject jsonObjectItemInShop = JSONObject.Parse(jsonDataObjects[index]);
+
+            Texture2D texture = www.texture;
+            Sprite spriteImage = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            foundImage.Image = spriteImage;
+
+            //now we can get the values from json of any attribute.
+            foundItem.Id = Convert.ToInt32(jsonObjectItem["id"].Number);
+            foundItem.Name = jsonObjectItem["name"].Str;
+            foundItem.Image = foundImage;
+            foundItem.Category = foundCategory;
+
+            foundItemInShop.Id = Convert.ToInt32(jsonObjectItemInShop["id"].Number);
+            foundItemInShop.Item = foundItem;
+            foundItemInShop.Shop = foundShop;
+            foundItemInShop.Price = jsonObjectItemInShop["price"].Number;
+
+            GameObject newItemListItem = itemObjectPool.GetObject();
+            newItemListItem.transform.SetParent(contentPanel);
+
+            ItemListItem itemListItem = newItemListItem.GetComponent<ItemListItem>();
+            itemListItem.ShowItemInfo(foundItemInShop);
         }
         else
         {

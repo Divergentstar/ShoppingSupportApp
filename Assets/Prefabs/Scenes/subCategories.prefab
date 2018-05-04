@@ -578,6 +578,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0796358c056515e438619374201672ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spritegroenten: {fileID: 21300000, guid: a297c14f8f3bfc14cac8d4e647f38df2, type: 3}
+  spritefruit: {fileID: 21300000, guid: f11da338d0cdde64da4ad65b8bd89ab9, type: 3}
+  spritegroentenfruit: {fileID: 21300000, guid: 09e0cafbc75330c4fbef5ee2438f299b,
+    type: 3}
+  spritesoep: {fileID: 21300000, guid: b8c8d263c7515b246b79abd717b59501, type: 3}
+  spriteparfum: {fileID: 21300000, guid: b5be15986e8f82548b9a36cc4100b3c0, type: 3}
+  spritechips: {fileID: 21300000, guid: 0abf7f571489b134ab5cba56fc350f18, type: 3}
+  spriteonderhoud: {fileID: 21300000, guid: 0bfa932f54f2cb345ad9e78baca0d22f, type: 3}
+  spritebeenhouwer: {fileID: 21300000, guid: 69be295185b443840a6a3d0501b842ca, type: 3}
+  spritediepvries: {fileID: 21300000, guid: 1842a61803a933d4f9895bd3138a3606, type: 3}
+  spritehuisdieren: {fileID: 21300000, guid: 5ca6f319b3dd1574abc42ff65e7a520b, type: 3}
+  spritezuivel: {fileID: 21300000, guid: cb222141f866ca745a39a5bed5eb8df1, type: 3}
+  spritedranken: {fileID: 21300000, guid: 192f37e0c8ef2a544b9964fe759ff3a1, type: 3}
+  spritenietvoeding: {fileID: 21300000, guid: d12e64ea5b580b34ca3c5464a863596d, type: 3}
+  spritevis: {fileID: 21300000, guid: 64c637dbe7e6fd24f90b99770be030c3, type: 3}
+  spritewijn: {fileID: 21300000, guid: f3f6d3726c29e8e429f673fa788c5992, type: 3}
+  spritesnoep: {fileID: 21300000, guid: 0a921c9eaabc35f42871284021fd5a4a, type: 3}
+  spriteontbijt: {fileID: 21300000, guid: 56f46fb6a8216554fa732b4b29ee589b, type: 3}
+  spritebaby: {fileID: 21300000, guid: b8b5e13bff754be4daf6664ac920e1b3, type: 3}
+  spritekruiden: {fileID: 21300000, guid: a7bba99224176bd48978608026dba1d4, type: 3}
+  spritestandard: {fileID: 21300000, guid: 04f116181a2ac9341839628bc8a25c03, type: 3}
   contentPanel: {fileID: 224188365941739180}
   categoryObjectPool: {fileID: 0}
 --- !u!114 &114673918701855506
@@ -813,7 +834,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114153878393333976}
-        m_MethodName: GetSubcategoriesOrItems
+        m_MethodName: GetItems
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1034,7 +1055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 216, y: -150}
+  m_AnchoredPosition: {x: 216, y: -147}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224188365941739180

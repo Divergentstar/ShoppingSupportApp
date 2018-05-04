@@ -708,7 +708,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114087388871270854}
-        m_MethodName: GetSubcategoriesOrItems
+        m_MethodName: GetSubcategories
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -818,6 +818,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578fd7db957d080448b4e427089ec2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spritegroentenfruit: {fileID: 21300000, guid: 09e0cafbc75330c4fbef5ee2438f299b,
+    type: 3}
+  spritesoep: {fileID: 21300000, guid: b8c8d263c7515b246b79abd717b59501, type: 3}
+  spriteparfum: {fileID: 21300000, guid: b5be15986e8f82548b9a36cc4100b3c0, type: 3}
+  spritechips: {fileID: 21300000, guid: 0abf7f571489b134ab5cba56fc350f18, type: 3}
+  spriteonderhoud: {fileID: 21300000, guid: 0bfa932f54f2cb345ad9e78baca0d22f, type: 3}
+  spritebeenhouwer: {fileID: 21300000, guid: 69be295185b443840a6a3d0501b842ca, type: 3}
+  spritediepvries: {fileID: 21300000, guid: 1842a61803a933d4f9895bd3138a3606, type: 3}
+  spritehuisdieren: {fileID: 21300000, guid: 5ca6f319b3dd1574abc42ff65e7a520b, type: 3}
+  spritezuivel: {fileID: 21300000, guid: cb222141f866ca745a39a5bed5eb8df1, type: 3}
+  spritedranken: {fileID: 21300000, guid: 192f37e0c8ef2a544b9964fe759ff3a1, type: 3}
+  spritenietvoeding: {fileID: 21300000, guid: d12e64ea5b580b34ca3c5464a863596d, type: 3}
+  spritevis: {fileID: 21300000, guid: 64c637dbe7e6fd24f90b99770be030c3, type: 3}
+  spritewijn: {fileID: 21300000, guid: f3f6d3726c29e8e429f673fa788c5992, type: 3}
+  spritesnoep: {fileID: 21300000, guid: 0a921c9eaabc35f42871284021fd5a4a, type: 3}
+  spriteontbijt: {fileID: 21300000, guid: 56f46fb6a8216554fa732b4b29ee589b, type: 3}
+  spritebaby: {fileID: 21300000, guid: b8b5e13bff754be4daf6664ac920e1b3, type: 3}
+  spritekruiden: {fileID: 21300000, guid: a7bba99224176bd48978608026dba1d4, type: 3}
+  spritestandard: {fileID: 21300000, guid: 04f116181a2ac9341839628bc8a25c03, type: 3}
   contentPanel: {fileID: 224172311575854182}
   categoryObjectPool: {fileID: 0}
 --- !u!114 &114944510967907826
@@ -899,7 +918,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564411213118666}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

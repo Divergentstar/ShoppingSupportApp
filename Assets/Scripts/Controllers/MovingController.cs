@@ -107,13 +107,19 @@ public class MovingController : MonoBehaviour
 
     public void GetSubcategories()
     {
-         _subCategories = GameObject.Find("subCategories");
-         _subCategories = subCategories;
-         _subCategories.GetComponent<Canvas>().enabled = true;
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = false;
+        _subCategories = GameObject.Find("subCategories");
+        _subCategories = subCategories;
+        _subCategories.GetComponent<Canvas>().enabled = true;
     }
 
     public void GetItems()
     {
+        _mainCategories = GameObject.Find("mainCategories");
+        _mainCategories = mainCategories;
+        _mainCategories.GetComponent<Canvas>().enabled = false;
         _subCategories = GameObject.Find("subCategories");
         _subCategories = subCategories;
         _subCategories.GetComponent<Canvas>().enabled = false;
@@ -346,6 +352,8 @@ public class MovingController : MonoBehaviour
                         categoryId = Convert.ToInt32(jsonObjectCategory["id"].Number);
                     }
                 }
+
+                CountSubcategories();
             }
         }
         else
@@ -409,6 +417,17 @@ public class MovingController : MonoBehaviour
                     {
                         amountSubcategories++;
                     }
+                }
+
+                Debug.Log(amountSubcategories);
+
+                if (amountSubcategories > 0)
+                {
+                    GetSubcategories();
+                }
+                else
+                {
+                    GetItems();
                 }
             }
         }

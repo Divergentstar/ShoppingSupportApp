@@ -20,6 +20,6 @@ public class ItemListItem : MonoBehaviour {
 
         nameItem.text = itemInShop.Item.Name;
         priceItem.text = "€ " + price.Replace(".", ",");
-        //iconImage.sprite = itemInShop.Item.Image.Image;
+        iconImage.sprite = itemInShop.Item.Image.Image;
     }
 }
