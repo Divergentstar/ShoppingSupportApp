@@ -391,7 +391,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a297c14f8f3bfc14cac8d4e647f38df2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Verse groenten
 --- !u!114 &114729238547905804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6800fea886a5a7943a3c81cfecb6f61c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09e0cafbc75330c4fbef5ee2438f299b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

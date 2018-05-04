@@ -190,16 +190,16 @@ public class SubCategoriesList : MonoBehaviour
                             case "Niet-voeding":
                                 foundImage.Image = spritenietvoeding;
                                 break;
-                            case "Bereidingen / Charcuterie / Vis / Veggie":
+                            case "Bereidingen/Charcuterie/Vis/Veggie":
                                 foundImage.Image = spritevis;
                                 break;
                             case "Wijn & Bubbels":
                                 foundImage.Image = spritewijn;
                                 break;
-                            case "Koekjes / Chocolade / Snoep":
+                            case "Koekjes/Chocolade/Snoep":
                                 foundImage.Image = spritesnoep;
                                 break;
-                            case "Brood / Ontbijt":
+                            case "Brood/Ontbijt":
                                 foundImage.Image = spriteontbijt;
                                 break;
                             case "Baby":

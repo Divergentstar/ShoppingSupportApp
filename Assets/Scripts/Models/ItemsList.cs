@@ -15,7 +15,7 @@ public class ItemsList : MonoBehaviour
     private string[] jsonDataObjects;
     private int categoryId = 6;
     private int shopId = 1;
-    private int itemId = 46;
+    private int itemId = 11;
     private int imageId = 1;
     private ItemInShopData foundItemInShop;
     private ShopData foundShop;

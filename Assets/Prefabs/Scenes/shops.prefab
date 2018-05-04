@@ -344,7 +344,7 @@ MonoBehaviour:
   mainCategories: {fileID: 0}
   subCategories: {fileID: 0}
   items: {fileID: 0}
-  market: {fileID: 1000934480691522, guid: 44122c5619945274fbb8d33d85a0171e, type: 2}
+  market: {fileID: 0}
   cashbox: {fileID: 0}
   nameShop: {fileID: 114126235928042842}
   nameCategory: {fileID: 0}
@@ -472,7 +472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Colruyt Turnhout
 --- !u!114 &114153748092986154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -487,7 +487,7 @@ MonoBehaviour:
   main: {fileID: 0}
   shops: {fileID: 1740169114873254}
   mainCategories: {fileID: 0}
-  subCategories: {fileID: 0}
+  subCategories: {fileID: 1740169114873254}
   items: {fileID: 0}
   market: {fileID: 0}
   cashbox: {fileID: 0}
@@ -526,7 +526,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6800fea886a5a7943a3c81cfecb6f61c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -745,10 +745,10 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 230}
+  m_CellSize: {x: 200, y: 270}
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 2
-  m_ConstraintCount: 4
+  m_ConstraintCount: 3
 --- !u!114 &114952141132561804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -830,7 +830,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740169114873254}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -860,7 +860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000005669892, y: 0}
+  m_AnchoredPosition: {x: 0.0000013262033, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224301339761650556
@@ -954,8 +954,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40.4}
-  m_SizeDelta: {x: 0, y: -80.7}
+  m_AnchoredPosition: {x: 0, y: -48.276}
+  m_SizeDelta: {x: 0, y: -96.551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224599007516854238
 RectTransform:

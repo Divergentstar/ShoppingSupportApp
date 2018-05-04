@@ -18,7 +18,7 @@ public class ItemListItem : MonoBehaviour {
     {
         string price = itemInShop.Price + "";
 
-        nameItem.text = itemInShop.Item.Name;
+        nameItem.text = itemInShop.Item.Id + " - " + itemInShop.Item.Name;
         priceItem.text = "€ " + price.Replace(".", ",");
         iconImage.sprite = itemInShop.Item.Image.Image;
     }

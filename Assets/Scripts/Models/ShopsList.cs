@@ -112,7 +112,12 @@ public class ShopsList : MonoBehaviour {
             }
             else
             {
-                foundImage.Image = spriteColruyt;
+                switch(jsonObjectShopNetwork["name"].Str)
+                {
+                    default:
+                        foundImage.Image = spriteColruyt;
+                        break;
+                }
 
                 //now we can get the values from json of any attribute.
                 foundShopNetwork.Id = Convert.ToInt32(jsonObjectShopNetwork["id"].Number);
