@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224815133821457556}
   - component: {fileID: 114569233291077596}
+  - component: {fileID: 114904507832221252}
   m_Layer: 5
   m_Name: shopListItem
   m_TagString: Untagged
@@ -98,6 +99,8 @@ MonoBehaviour:
   subCategories: {fileID: 1425633845019246, guid: cbd0531f7e5064b4eb22c800dfa6216e,
     type: 2}
   items: {fileID: 1392060869752530, guid: b5657068e2f753f4cb8c2efb2f77ee9c, type: 2}
+  shoppinglist: {fileID: 1132969056422998, guid: ab6231d79d874f942a2b7dfcd52f2945,
+    type: 2}
   market: {fileID: 1000934480691522, guid: 44122c5619945274fbb8d33d85a0171e, type: 2}
   cashbox: {fileID: 1493719252415986, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
   nameShop: {fileID: 114463523163655292}
@@ -254,6 +257,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114904507832221252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1879101184582066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 200
+  m_PreferredHeight: 270
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!222 &222595057935581748
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -326,7 +348,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224922481905524998
 RectTransform:

@@ -178,6 +178,8 @@ MonoBehaviour:
   subCategories: {fileID: 1425633845019246, guid: cbd0531f7e5064b4eb22c800dfa6216e,
     type: 2}
   items: {fileID: 1392060869752530, guid: b5657068e2f753f4cb8c2efb2f77ee9c, type: 2}
+  shoppinglist: {fileID: 1132969056422998, guid: ab6231d79d874f942a2b7dfcd52f2945,
+    type: 2}
   market: {fileID: 1000934480691522, guid: 44122c5619945274fbb8d33d85a0171e, type: 2}
   cashbox: {fileID: 1493719252415986, guid: 3dbc0e36d93745f46a3aded1057a1f01, type: 2}
   nameShop: {fileID: 0}

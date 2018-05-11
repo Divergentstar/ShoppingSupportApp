@@ -12,6 +12,7 @@ public class MovingController : MonoBehaviour
     public GameObject mainCategories;
     public GameObject subCategories;
     public GameObject items;
+    public GameObject shoppinglist;
     public GameObject market;
     public GameObject cashbox;
     public Text nameShop;
@@ -26,6 +27,7 @@ public class MovingController : MonoBehaviour
     private GameObject _mainCategories;
     private GameObject _subCategories;
     private GameObject _items;
+    private GameObject _shoppinglist;
     private WWW www;
     private string databaseUrl = "";
     private string jsonData = "";
@@ -51,6 +53,9 @@ public class MovingController : MonoBehaviour
         _items = GameObject.Find("items");
         _items = items;
         _items.GetComponent<Canvas>().enabled = false;
+        _shoppinglist = GameObject.Find("shoppinglist");
+        _shoppinglist = shoppinglist;
+        _shoppinglist.GetComponent<Canvas>().enabled = false;
     }
 
     public int GetShopId()
@@ -128,10 +133,23 @@ public class MovingController : MonoBehaviour
         _items.GetComponent<Canvas>().enabled = true;
     }
 
+    public void ShowFullShoppingList()
+    {
+        _items = GameObject.Find("items");
+        _items = items;
+        _items.GetComponent<Canvas>().enabled = false;
+        _shoppinglist = GameObject.Find("shoppinglist");
+        _shoppinglist = shoppinglist;
+        _shoppinglist.GetComponent<Canvas>().enabled = true;
+    }
+
     // Нажали на иконку магазина, переход в магазин
     public void GetMarket()
     {
         main.gameObject.SetActive(false);
+        _shoppinglist = GameObject.Find("shoppinglist");
+        _shoppinglist = shoppinglist;
+        _shoppinglist.GetComponent<Canvas>().enabled = false;
         market.gameObject.SetActive(true);
     }
 
@@ -173,9 +191,20 @@ public class MovingController : MonoBehaviour
         _items = GameObject.Find("items");
         _items = items;
         _items.GetComponent<Canvas>().enabled = false;
+        _shoppinglist = GameObject.Find("shoppinglist");
+        _shoppinglist = shoppinglist;
+        _shoppinglist.GetComponent<Canvas>().enabled = false;
         _mainCategories = GameObject.Find("mainCategories");
         _mainCategories = mainCategories;
         _mainCategories.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void BackToShoppingList()
+    {
+        market.gameObject.SetActive(false);
+        _shoppinglist = GameObject.Find("shoppinglist");
+        _shoppinglist = shoppinglist;
+        _shoppinglist.GetComponent<Canvas>().enabled = true;
     }
 
     // Переход в магазин из кассы

@@ -12,6 +12,7 @@ public class DropToPay : MonoBehaviour, IDropHandler {
     public void OnDrop (PointerEventData eventData) 
 	{
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
+
 		if (d != null) {
 			d.parentToReturnTo = this.transform;
 			if (d.parentToReturnTo.gameObject.tag == d.gameObject.tag && newPosition != d.parentToReturnTo.gameObject.transform.position) {    // в тегах лежит номинал денег

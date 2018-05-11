@@ -12,10 +12,12 @@ public class DropMoney : MonoBehaviour, IDropHandler {
 	public void OnDrop (PointerEventData eventData) {
 		//Debug.Log ("On drop");
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable> ();
+
         if (listMoney.Count > 9)
         {
             d = null;
         }
+
         if (d != null) {
 			d.parentToReturnTo = this.transform;
             
